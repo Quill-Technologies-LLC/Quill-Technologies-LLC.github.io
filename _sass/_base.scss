@@ -1,34 +1,76 @@
 html, body {
     margin: 0;
-    background-color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: $background-color;
+    font-family: $base-font-family;
 
     position: relative;
 }
 
+// Common Mixins
+@mixin bg-image($image_uri) {
+    background-image: url($image_uri);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+@mixin button-border($radius) {
+    border-bottom: 3pt solid $border-dark;
+    border-left: 3pt solid $border-dark;
+    border-right: 3pt solid $border-dark;
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+main { 
+    
+    h1 {
+        font-size: 1.7em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    h3 {
+        font-size: 1.2em;
+    }
+
+    code {
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 0.8em;
+    }
+
+    a {
+        text-decoration: none;
+        color: $border-dark;
+    }
+    
+    a:hover {
+        color: $border-bright;
+    }
+}
+
 .logo-container {
+    @include bg-image($logo_image);
+
     float: left;
     display: block;
     
     width: 10%;
     font-size: 2em;
-
-    background-repeat: no-repeat;
-    background-size: 100%;
 }
 
 .cover-panel {
+    @include bg-image($cover_image);
+
     margin: 0;
     width: 100%;
     height: 28em;
-    background-repeat: no-repeat;
-    background-size: 100%;
-
-    border-bottom: 0.25em solid rgb(170, 50, 25);
+    border-bottom: 0.25em solid $border-dark;
 }
 
 .cover-title {
-    background-color: rgba(255, 220, 65, 0.75); 
+    background-color: $background-alpha; 
 
     margin-top: 15em;
 
@@ -51,7 +93,6 @@ html, body {
 }
 
 .blog-title-text {
-    /*font-family: Arial, Helvetica, sans-serif;*/
     font-weight: bold;
 }
 
@@ -61,19 +102,16 @@ html, body {
 }
 
 .blog-description-text {
-    /*font-family: Arial, Helvetica, sans-serif;*/
     font-style: italic;
 }
 
 .sitemap {
-    /*padding-top: 3em;*/
     position: static;
-    
-    border-top: 0.25em solid rgb(170, 50, 25);
+    border-top: 0.25em solid $border-dark;
 }
 
 .sitemap-container {
-    background-color: rgba(255, 220, 65, 0.75);
+    background-color: $background-alpha;
 }
 
 .sitemap-list {
@@ -94,24 +132,19 @@ html, body {
     width: 8em;
     display: table-cell;
     vertical-align: middle;
-
-    background-color: rgb(255, 220, 65);
+    background-color: $background-solid;
  
-    border-bottom: 3pt solid rgb(170, 50, 25);
-    border-left: 3pt solid rgb(170, 50, 25);
-    border-right: 3pt solid rgb(170, 50, 25);
-    border-bottom-left-radius: 1.5em;
-    border-bottom-right-radius: 1.5em;
+    @include button-border(1.5em);
 
     text-align: center;
 }
 
 .sitemap-item-container:hover {
-    border-color: rgb(235, 50, 25);
+    border-color: $border-bright;
 }
 
 .sitemap-item-container:hover .sitemap-item-text {
-    color: rgb(235, 50, 25);
+    color: $border-bright;
 }
 
 .sitemap-item-link {
@@ -119,7 +152,7 @@ html, body {
 }
 
 .sitemap-item-text {
-    color: rgb(170, 50, 25);
+    color: $border-dark;
     font-weight: bold;
     /*font-family: Arial, Helvetica, sans-serif;*/
 }
@@ -169,39 +202,13 @@ html, body {
 .foot-container {
     clear: both;
     min-height: 3em;
-    background-color: rgb(255, 220, 65);
+    background-color: $background-solid;
     width: 100%;
 }
 
 .foot-content {
     margin-top: 1em;
     text-align: center;
-}
-
-main h1 {
-    font-size: 1.7em;
-}
-
-main h2 {
-    font-size: 1.4em;
-}
-
-main h3 {
-    font-size: 1.2em;
-}
-
-main code {
-    font-family: "Lucida Console", Monaco, monospace;
-    font-size: 0.8em;
-}
-
-main a {
-    text-decoration: none;
-    color: rgb(170, 50, 25);
-}
-
-main a:hover {
-    color: rgb(235, 50, 25);
 }
 
 .sidebar-item {
@@ -220,7 +227,7 @@ main a:hover {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 
-    background-color: rgba(255, 220, 65, 0.75);
+    background-color: $background-alpha;
 
     text-align: center;
 
@@ -232,19 +239,8 @@ img.sidebar-item-image {
     width: 100%;
 }
 
-/*.sidebar-item-divider {
-    float: left;
-    width: 100%;
-    height: 1em;
-    border: 0;
-
-    top: -1em;
-
-    box-shadow: inset 0 1em 1em -1em  rgba(170, 50, 25, 0.5);
-}*/
-
 .sidebar-item:hover a {
-    color: rgb(235, 50, 25);
+    color: $border-bright;
 }
 
 .sidebar-item:hover .sidebar-item-divider {
@@ -268,7 +264,7 @@ img.sidebar-item-image {
 }
 
 .blob-icon-container {
-    border: 2px solid rgb(170, 50, 25);
+    border: 2px solid $border-dark;
     border-radius: 1em;
 }
 
@@ -283,7 +279,7 @@ img.sidebar-item-image {
     height: 1.2em;
     text-align: center;
 
-    background-color: rgba(255, 220, 65, 0.75);
+    background-color: $background-alpha;
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
 }

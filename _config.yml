@@ -18,5 +18,6 @@ url: "http://quilltechnologies.com" # the base hostname & protocol for your site
 twitter_username: TheMcQuillan
 github_username:  Quill-Technologies-LLC
 cover_img: /images/quill_bannerx1024.png
+logo_img: /images/quill_logo.png
 # Build settings
 markdown: kramdown
