@@ -1,15 +1,19 @@
 ---
 layout: page
-title: About
+title: About Quill Technologies, LLC
+slug: About
 permalink: /about/
+header: true
+order: 1
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
-
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+* Focused client-driven solutions
+    * Work with you to arrive at the "best fit" solution.
+    * Solving the problems that face your business efficiently, without unnecessary clutter
+* Committed to solving problems holistically
+    * Solve the _whole_ problem and nothing but the problem.
+* Highly polished technical skills
+    * Proactively identify and solve issues in implementation
+* Clean, maintainable systems which do not resist change
+    * Clear and easy to understand
+    * Well-documented for future expansion and changes.
