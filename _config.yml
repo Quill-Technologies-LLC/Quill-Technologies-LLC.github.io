@@ -17,7 +17,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://quilltechnologies.com" # the base hostname & protocol for your site
 twitter_username: TheMcQuillan
 github_username:  Quill-Technologies-LLC
-cover_img: /images/quill_bannerx1024.png
-logo_img: /images/quill_logo.png
+cover_img: /images/bannerx1024.jpg
+logo_img: /images/quill_logo_corner.png
 # Build settings
 markdown: kramdown

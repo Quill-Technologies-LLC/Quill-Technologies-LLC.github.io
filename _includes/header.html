@@ -1,30 +1,32 @@
+<div class="logo-bar-container">
+    <div class="logo-container">
+        <img class="logo-image" src="{{ site.logo_img }}" />&nbsp;
+    </div>
+    <div class="social-container">
+        {% include social.html %}
+    </div>
+</div>
 <div class="cover-panel">
+    
     <div class="sitemap">
         <div class="sitemap-container">
-            <div class="logo-container">
-                &nbsp;
-            </div>
 
-            <ul class="sitemap-list">
+            <div class="sitemap-list">
               <!-- Navigation Elements -->
               {% assign pages = site.pages | where: "header",true | sort: 'order' %}
 
               {% for my_page in pages %}
                 {% if my_page.title %}
+                <div class="sitemap-item">
                   <a href="{{ my_page.url | prepend: site.baseurl }}" class="sitemap-item-link">
-                    <li class="sitemap-item">
-                      <div class="sitemap-item-container">			
-                        <span class="sitemap-item-text">{{ my_page.slug }}</span>
-                      </div>
-                    </li>
+                    <div class="sitemap-item-container">			
+                      <span class="sitemap-item-text">{{ my_page.slug }}</span>
+                    </div>
                   </a>
+                </div>
                 {% endif %}
               {% endfor %}
               <!-- End navigation elements -->
-            </ul>
-
-            <div class="social-container">
-                {% include social.html %}
             </div>
         </div>
     </div>

@@ -4,21 +4,22 @@
   {% include head.html %}
 
   <body>
+    <div class="page-container">
+      
+      {% include header.html %}
 
-    {% include header.html %}
+      <div class="body-container">
+        <div class="body-content">
+          {{ content }}
+        </div>
+      </div>
 
-    <div class="body-container">
-      <div class="body-content">
-        {{ content }}
+      <div class="foot-container">
+        <div class="foot-content">
+          {% include footer.html %}
+        </div>
       </div>
     </div>
-
-    <div class="foot-container">
-      <div class="foot-content">
-        {% include footer.html %}
-      </div>
-    </div>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
   </script>
   <!-- Google Tag Manager -->

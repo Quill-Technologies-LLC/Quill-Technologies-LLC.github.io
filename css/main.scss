@@ -5,31 +5,29 @@
 
 // Our variables
 $base-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-$base-font-size:   16px;
-$base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
 
-$spacing-unit:     30px;
+$sitemap-height:    3em;
+$sea-blue:          rgb( 145, 219, 241 );
+$light-blue:        rgb( 0, 173, 239 );
+$dark-blue:         rgb( 46, 49, 146 );
+$black:             rgb( 0, 0, 0 );
+$white:             rgb( 255, 255, 255 );
 
 $cover-image:      '{{ site.cover_img }}';
 $logo-image:       '{{ site.logo_img }}';
-$text-color:       rgb(0, 0, 0);
-$background-color: rgb(255, 255, 255);
-$background-solid: rgb(255, 220, 65);
-$background-alpha: rgba(255, 220, 65, 0.75);
-$border-dark:      rgb(170, 50, 25);
-$border-bright:    rgb(235, 50, 25);
+$text-color:       $black;
 
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+$background-color: $white;
+$background-solid: $sea-blue;
+$background-alpha: rgba(255, 255, 255, 0.75);
+$background-dark:   $dark-blue;
 
-// Width of the content area
-$content-width:    800px;
+$border-dark:       $dark-blue;      
+$border-bright:     $light-blue;
 
-$on-palm:          600px;
-$on-laptop:        800px;
+
+$sitemap-font-color:    $dark-blue;
+$sitemap-fade-time:     0.25s;
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -43,8 +41,6 @@ $on-laptop:        800px;
         @content;
     }
 }
-
-
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import

@@ -11,6 +11,7 @@ html, body {
     background-image: url($image_uri);
     background-repeat: no-repeat;
     background-size: 100%;
+    background-position: center;
 }
 
 @mixin button-border($radius) {
@@ -19,6 +20,11 @@ html, body {
     border-right: 3pt solid $border-dark;
     border-bottom-left-radius: $radius;
     border-bottom-right-radius: $radius;
+}
+
+@mixin color-fade($time) {
+    transition: background-color $time, color $time;
+    -webkit-transition: background-color $time, color $time;
 }
 
 main { 
@@ -50,26 +56,56 @@ main {
     }
 }
 
+// BEGIN TOP ROW CSS
+.logo-bar-container {
+    display: block;
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+}
+
 .logo-container {
-    @include bg-image($logo_image);
+    display: block;
+    width: 180px;
+    font-size: 2em;
+    margin: 0.1em 1em;
 
     float: left;
-    display: block;
-    
-    width: 10%;
-    font-size: 2em;
+    height: 100%;
 }
+
+.social-container {
+    display:block;
+    float: right;
+    width: 15%;
+    height: 100%;
+}
+
+.social-item { 
+    float: left; 
+    display: block; 
+    height: 3em; 
+}
+
+.social-img { 
+    vertical-align: middle; 
+    max-height: 2.5em; 
+}
+
+// END TOP ROW CSS
 
 .cover-panel {
     @include bg-image($cover_image);
 
-    margin: 0;
+    display: block;
+
     width: 100%;
     height: 28em;
     border-bottom: 0.25em solid $border-dark;
 }
 
 .cover-title {
+    clear: both;
     background-color: $background-alpha; 
 
     margin-top: 15em;
@@ -108,43 +144,43 @@ main {
 .sitemap {
     position: static;
     border-top: 0.25em solid $border-dark;
+
+    height: $sitemap-height;
 }
 
 .sitemap-container {
-    background-color: $background-alpha;
+    background-color: $sea-blue;
+    height: $sitemap-height;
 }
 
 .sitemap-list {
-    display: inline-block;
-    list-style: none;
-    height: 3em;
-
+    height: $sitemap-height;
     margin: 0;
+    float: left;
 }
 
 .sitemap-item {
-    margin-left: 3em;
-    display: inline-block;
+    height: $sitemap-height;
+    float: left;
 }
 
 .sitemap-item-container {
-    height: 2em;
-    width: 8em;
+    height: $sitemap-height;
+    width: 12em;
     display: table-cell;
     vertical-align: middle;
     background-color: $background-solid;
- 
-    @include button-border(1.5em);
-
     text-align: center;
 }
 
 .sitemap-item-container:hover {
-    border-color: $border-bright;
+    background-color: $background-dark;
+    @include color-fade($sitemap-fade-time);
 }
 
 .sitemap-item-container:hover .sitemap-item-text {
-    color: $border-bright;
+    color: $white;
+    @include color-fade($sitemap-fade-time);
 }
 
 .sitemap-item-link {
@@ -152,31 +188,16 @@ main {
 }
 
 .sitemap-item-text {
-    color: $border-dark;
-    font-weight: bold;
-    /*font-family: Arial, Helvetica, sans-serif;*/
+    color: $sitemap-font-color;
+    font-size: 1.2em;
 }
 
-.social-container {
-    float: right;
-    margin-right: 10em;
-}
+
 
 .align-helper {
     display: inline-block;
     height: 100%;
     vertical-align: middle;
-}
-
-.social-item {
-    float: left;
-    display: block;
-    height: 3em;
-}
-
-.social-img {
-    vertical-align: middle;
-    max-height: 2.5em;
 }
 
 .body-container {
@@ -189,7 +210,7 @@ main {
 }
 
 .content-main {
-    float:left;
+    float: left;
 
     width: 60%;
 }
@@ -204,6 +225,9 @@ main {
     min-height: 3em;
     background-color: $background-solid;
     width: 100%;
+
+
+    bottom: 0;
 }
 
 .foot-content {
