@@ -3,7 +3,7 @@ layout: page
 title: Services
 slug: Services
 permalink: /services/
-order: 2
+order: 10
 header: true
 ---
 

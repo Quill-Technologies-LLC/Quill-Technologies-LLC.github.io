@@ -1,5 +1,9 @@
 ---
 layout: default
+title: Home
+slug: Home
+order: 1
+header: true
 ---
 
 ## Our Mission

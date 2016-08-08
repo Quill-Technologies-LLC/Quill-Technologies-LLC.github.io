@@ -4,7 +4,7 @@ title: About Quill Technologies, LLC
 slug: About
 permalink: /about/
 header: true
-order: 1
+order: 5
 ---
 
 * Focused client-driven solutions
