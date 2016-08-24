@@ -1,6 +1,5 @@
 ---
-layout: default
-title: Home
+layout: page
 slug: Home
 order: 1
 header: true
