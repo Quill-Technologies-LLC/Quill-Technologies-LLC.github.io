@@ -37,7 +37,7 @@ $sitemap-fade-time:     0.25s;
 //     }
 // }
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
+    @media screen and (min-width: $device) {
         @content;
     }
 }

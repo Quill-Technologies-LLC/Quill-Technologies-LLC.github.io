@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
   {% include head.html %}
 
   <body>
-    <div class="page-container">
-      
-      {% include header.html %}
-
-      <div class="body-container">
-        <div class="body-content">
-          {{ content }}
-        </div>
+    <div class="page-container container-fluid">
+      <div class="row head-container">
+        {% include header.html %}
       </div>
 
-      <div class="foot-container">
-        <div class="foot-content">
+      <div class="row body-container">
+          {{ content }}
+      </div>
+
+      <div class="row foot-container">
+        <div class="foot-content col-xs-12">
           {% include footer.html %}
         </div>
       </div>
     </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
   </script>
   <!-- Google Tag Manager -->
   <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-P7ZTRH"

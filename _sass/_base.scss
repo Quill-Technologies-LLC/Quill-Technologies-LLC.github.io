@@ -2,8 +2,27 @@ html, body {
     margin: 0;
     background-color: $background-color;
     font-family: $base-font-family;
+}
 
-    position: relative;
+/* Unused at this time */
+.blog-title {
+    float: left;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.blog-title-text {
+    font-weight: bold;
+}
+
+.blog-description {
+    clear: left;
+    margin-bottom: 1em;
+}
+
+.blog-description-text {
+    font-style: italic;
 }
 
 // Common Mixins
@@ -26,6 +45,8 @@ html, body {
     transition: background-color $time, color $time;
     -webkit-transition: background-color $time, color $time;
 }
+
+/* Style choices */
 
 main { 
     
@@ -56,35 +77,9 @@ main {
     }
 }
 
-// BEGIN TOP ROW CSS
-.logo-bar-container {
-    display: block;
-    width: 100%;
-    height: 140px;
-    overflow: hidden;
-}
-
+/* All screen types */
 .logo-container {
-    display: block;
-    width: 180px;
     font-size: 2em;
-    margin: 0.1em 1em;
-
-    float: left;
-    height: 100%;
-}
-
-.social-container {
-    display:block;
-    float: right;
-    width: 15%;
-    height: 100%;
-}
-
-.social-item { 
-    float: left; 
-    display: block; 
-    height: 3em; 
 }
 
 .social-img { 
@@ -92,244 +87,236 @@ main {
     max-height: 2.5em; 
 }
 
-// END TOP ROW CSS
+/* Only tablets and larger */
+@include media-query(768px) {
+    /* Layout */
 
-.cover-panel {
-    @include bg-image($cover_image);
+    .logo-bar-container {
+        display: block;
+        width: 100%;
+        height: 140px;
+        overflow: hidden;
+    }
 
-    display: block;
+    .logo-container {
+        display: block;
+        width: 180px;       
+        margin: 0.1em 1em;
+        float: left;
+        height: 100%;
+    }
 
-    width: 100%;
-    height: 28em;
-    border-bottom: 0.25em solid $border-dark;
-}
+    .social-container {
+        display:block;
+        float: right;
+        width: 15%;
+        height: 100%;
+    }
 
-.cover-title {
-    clear: both;
-    background-color: $background-alpha; 
+    .social-item { 
+        float: left; 
+        display: block; 
+        height: 3em; 
+    }
 
-    margin-top: 15em;
+    .cover-panel {
+        @include bg-image($cover_image);
+        display: block;
+        height: 28em;
+        border-bottom: 0.25em solid $border-dark;
+    }
 
-    min-height: 5em;
-    max-height: 6em;
-    width: 100%;
-    vertical-align: middle;
-}
+    .cover-title {
+        clear: both;
+        background-color: $background-alpha; 
+        margin-top: 15em;
+        min-height: 5em;
+        max-height: 6em;
+        vertical-align: middle;
+    }
 
-.blog-title-pad {
-    width: 6em;
-    float: left;
-}
+    .blog-title-pad { 
+        width: 6em; // TODO: Use a bootstrap primitive to offset this.
+        float: left;
+    }
 
-.blog-title {
-    float: left;
-    height: 100%;
-    display: table-cell;
-    vertical-align: middle;
-}
+    .sitemap {
+        border-top: 0.25em solid $border-dark;
+        height: $sitemap-height;
+    }
 
-.blog-title-text {
-    font-weight: bold;
-}
+    .sitemap-container {
+        background-color: $sea-blue;
+        height: $sitemap-height;
+    }
 
-.blog-description {
-    clear: left;
-    margin-bottom: 1em;
-}
+    .sitemap-list {
+        height: $sitemap-height;
+        margin: 0;
+        float: left;
+    }
 
-.blog-description-text {
-    font-style: italic;
-}
+    .sitemap-item {
+        height: $sitemap-height;
+        float: left;
+    }
 
-.sitemap {
-    position: static;
-    border-top: 0.25em solid $border-dark;
+    .sitemap-item-container {
+        height: $sitemap-height;
+        width: 12em;
+        display: table-cell;
+        vertical-align: middle;
+        background-color: $background-solid;
+        text-align: center;
+    }
 
-    height: $sitemap-height;
-}
+    .sitemap-item-container:hover {
+        background-color: $background-dark;
+        @include color-fade($sitemap-fade-time);
+    }
 
-.sitemap-container {
-    background-color: $sea-blue;
-    height: $sitemap-height;
-}
+    .sitemap-item-container:hover .sitemap-item-text {
+        color: $white;
+        @include color-fade($sitemap-fade-time);
+    }
 
-.sitemap-list {
-    height: $sitemap-height;
-    margin: 0;
-    float: left;
-}
+    .sitemap-item-link {
+        text-decoration: none;
+    }
 
-.sitemap-item {
-    height: $sitemap-height;
-    float: left;
-}
+    .sitemap-item-text {
+        color: $sitemap-font-color;
+        font-size: 1.2em;
+    }
 
-.sitemap-item-container {
-    height: $sitemap-height;
-    width: 12em;
-    display: table-cell;
-    vertical-align: middle;
-    background-color: $background-solid;
-    text-align: center;
-}
+    .align-helper {
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+    }
 
-.sitemap-item-container:hover {
-    background-color: $background-dark;
-    @include color-fade($sitemap-fade-time);
-}
+    .body-content {
+        margin: 1em 8em;
+    }
 
-.sitemap-item-container:hover .sitemap-item-text {
-    color: $white;
-    @include color-fade($sitemap-fade-time);
-}
+    .content-main {
+        float: left;
 
-.sitemap-item-link {
-    text-decoration: none;
-}
+        width: 60%;
+    }
 
-.sitemap-item-text {
-    color: $sitemap-font-color;
-    font-size: 1.2em;
-}
+    .content-side {
+        float: right;
+        width: 25%;
+    }
 
+    .foot-container {
+        min-height: 3em;
+        background-color: $background-solid;
+        bottom: 0;
+    }
 
+    .foot-content {
+        margin-top: 1em;
+        text-align: center;
+    }
 
-.align-helper {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-}
+    .sidebar-item {
+        margin: 2em 0;
+        height: 12em;
 
-.body-container {
-    width: 100%;
-    clear: both;
-}
+        background-repeat: no-repeat;
+        background-size: 100%;
 
-.body-content {
-    margin: 1em 8em;
-}
+        border-radius: 1em;
+    }
 
-.content-main {
-    float: left;
+    .sidebar-item-text {
+        width: 100%;
 
-    width: 60%;
-}
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
 
-.content-side {
-    float: right;
-    width: 25%;
-}
+        background-color: $background-alpha;
 
-.foot-container {
-    clear: both;
-    min-height: 3em;
-    background-color: $background-solid;
-    width: 100%;
+        text-align: center;
 
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+    }
 
-    bottom: 0;
-}
+    img.sidebar-item-image {
+        width: 100%;
+    }
 
-.foot-content {
-    margin-top: 1em;
-    text-align: center;
-}
+    .sidebar-item:hover a {
+        color: $border-bright;
+    }
 
-.sidebar-item {
-    margin: 2em 0;
-    height: 12em;
+    .sidebar-item:hover .sidebar-item-divider {
+        box-shadow: inset 0 1em 1em -1em rgba(235, 50, 25, 0.5);
+    }
 
-    background-repeat: no-repeat;
-    background-size: 100%;
+    /*
+    * Markup intended to be internal to blog posts.
+    */
 
-    border-radius: 1em;
-}
+    .blob-four-column > div {
+        float: left;
+        
+        width: 20%;
+        margin-left: 2%;
+        margin-right: 2%;
+    }
 
-.sidebar-item-text {
-    width: 100%;
+    .blob-icon-title {
+        width: 45%;
+    }
 
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
+    .blob-icon-container {
+        border: 2px solid $border-dark;
+        border-radius: 1em;
+    }
 
-    background-color: $background-alpha;
+    .right-clear {
+        clear: right;
+    }
 
-    text-align: center;
+    .blob-icon-title {
+        width: 100%;
+        padding: 0.5em 0;
 
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
-}
+        height: 1.2em;
+        text-align: center;
 
-img.sidebar-item-image {
-    width: 100%;
-}
+        background-color: $background-alpha;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+    }
 
-.sidebar-item:hover a {
-    color: $border-bright;
-}
+    .blob-icon-image {
+        height: 8em;
+        width: 8em;
+    }
 
-.sidebar-item:hover .sidebar-item-divider {
-    box-shadow: inset 0 1em 1em -1em rgba(235, 50, 25, 0.5);
-}
+    .form-margin {
+        margin: 4em 1em;
+    }
 
-/*
- * Markup intended to be internal to blog posts.
- */
+    .form-group {
+        display: block;
 
-.blob-four-column > div {
-    float: left;
-    
-    width: 20%;
-    margin-left: 2%;
-    margin-right: 2%;
-}
+        margin-left: 2em;
+    }
 
-.blob-icon-title {
-    width: 45%;
-}
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        width: 35%
+    }
 
-.blob-icon-container {
-    border: 2px solid $border-dark;
-    border-radius: 1em;
-}
-
-.right-clear {
-    clear: right;
-}
-
-.blob-icon-title {
-    width: 100%;
-    padding: 0.5em 0;
-
-    height: 1.2em;
-    text-align: center;
-
-    background-color: $background-alpha;
-    border-top-left-radius: 1em;
-    border-top-right-radius: 1em;
-}
-
-.blob-icon-image {
-    height: 8em;
-    width: 8em;
-}
-
-.form-margin {
-    margin: 4em 1em;
-}
-
-.form-group {
-    display: block;
-
-    margin-left: 2em;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-    width: 35%
-}
-
-.form-group input {
-    display: block;
-    width: 65%;
+    .form-group input {
+        display: block;
+        width: 65%;
+    }
 }
